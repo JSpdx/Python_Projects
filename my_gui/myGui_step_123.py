@@ -30,7 +30,7 @@ class ParentWindow(Frame):
 #================================GUI+++++++++++++++++++++++++
 
     # Buttons
-        self.btn_browse1 = tk.Button(self.master,width=12,height=1,text='Browse...',command= self.getDir)
+        self.btn_browse1 = tk.Button(self.master,width=12,height=1,text='Browse...',command = self.getDir)
         self.btn_browse1.grid(row=1,column=0,padx=(20,0),pady=(70,0),sticky=W)
 
 
