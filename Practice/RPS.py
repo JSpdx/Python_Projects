@@ -35,10 +35,9 @@ if __name__ == "__main__":
     game_running = True
     hands = {1 : 'Rock', 2: 'Paper', 3: 'Scissors'}
     score = {'player': 0, 'npc': 0}
-    number_of_rounds = int(input('What should we play to?'))
-    print('Let\'s play rock paper scissors. First to 3 wins!')
+    number_of_rounds = int(input('What should we play to? '))
+    print(f'Let\'s play rock paper scissors. First to {number_of_rounds} wins!')
     while game_running: 
-        
         npc_throw = random.randint(1, 3)
         player_throw = int(input('Type 1 for rock, 2 for paper, or 3 for scissors: '))
         while True:
@@ -51,13 +50,13 @@ if __name__ == "__main__":
         # this method calculates the winner and attributes them a point
         game_logic(player_throw, npc_throw)
         print(score)
-        if score['player'] == 3:
+        if score['player'] == number_of_rounds:
             print('You win!')
             reset_score(score)
             play_again = input('Do you want to play again? y or n: ')
             if play_again.lower() == 'n':
                 game_running = False
-        elif score['npc'] == 3:
+        elif score['npc'] == number_of_rounds:
             print('You lose')
             reset_score(score)
             play_again = input('Do you want to play again? y or n: ')
