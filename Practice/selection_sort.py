@@ -5,9 +5,11 @@ arr2 = [567,4,3]
 def find_lowest(arr):
     lowest = arr[0]
     lowest_index = 0
-    for i in range(len(arr)):
+    for i in range(1, len(arr)):
         if arr[i] < lowest:
+            lowest = arr[i]
             lowest_index = i
+    print(arr[lowest_index])
     return lowest_index
 
 def sort(arr):
@@ -16,5 +18,5 @@ def sort(arr):
         num = arr.pop(find_lowest(arr))
         sorted_arr.append(num)
     return sorted_arr   
-
+print(find_lowest(unsorted_arr))
 print(sort(unsorted_arr))
